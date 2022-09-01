@@ -2,16 +2,24 @@ package ru.job4j.forum.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
+@Table(name = "posts")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
-
     @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     private LocalDateTime created;
+
+    public Post() {
+        this.created = LocalDateTime.now();
+    }
 
     public static Post of(int id, String name, String description) {
         Post post = new Post();

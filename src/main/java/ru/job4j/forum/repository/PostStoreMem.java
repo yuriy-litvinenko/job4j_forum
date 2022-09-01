@@ -1,6 +1,5 @@
 package ru.job4j.forum.repository;
 
-import org.springframework.stereotype.Repository;
 import ru.job4j.forum.model.Post;
 
 import java.time.LocalDateTime;
@@ -9,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Repository
 public class PostStoreMem {
     private final Map<Integer, Post> posts = new HashMap<>();
     private final AtomicInteger id = new AtomicInteger();
