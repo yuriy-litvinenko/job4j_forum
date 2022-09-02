@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Repository
 public class UserStoreMem {
     private final Map<Integer, User> users = new HashMap<>();
     private final AtomicInteger id = new AtomicInteger();
